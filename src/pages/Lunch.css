@@ -1,0 +1,44 @@
+/* src/pages/Lunch.css */
+.lunch-container {
+    padding: 20px;
+    background-color: #f0f8ff;
+  }
+  
+  .lunch-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .lunch-recipe-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .lunch-recipe-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 25px; /* Increased padding for a larger card */
+    width: 350px; /* Increased width of the card */
+    text-align: center;
+  }
+  
+  .lunch-image {
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+  }
+  
+  .lunch-recipe-title {
+    font-size: 1.75rem; /* Increased font size for the title */
+    margin: 10px 0;
+  }
+  
+  .lunch-description {
+    font-size: 1.2rem; /* Increased font size for the description */
+    color: #555;
+  }
+  
