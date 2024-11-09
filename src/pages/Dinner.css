@@ -1,0 +1,69 @@
+/* src/pages/Dinner.css */
+.dinner-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .dinner-banner {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .dinner-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .dinner-recipeList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .dinner-recipeCard {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .dinner-image {
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+  }
+  
+  .dinner-recipeTitle {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .dinner-description {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .dinner-button-container {
+    margin-top: 30px;
+  }
+  
+  .dinner-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .dinner-button:hover {
+    background-color: #218838;
+  }
+  

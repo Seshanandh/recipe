@@ -1,84 +1,59 @@
 // src/pages/Breakfast.js
 import React from 'react';
-
-const breakfastRecipes = [
-  {
-    title: 'Pancakes',
-    description: 'Fluffy pancakes served with maple syrup.',
-    image: 'path/to/pancakes-image.jpg', // Replace with the actual image path
-  },
-  {
-    title: 'Omelette',
-    description: 'A classic omelette filled with cheese and vegetables.',
-    image: 'path/to/omelette-image.jpg', // Replace with the actual image path
-  },
-  {
-    title: 'Smoothie Bowl',
-    description: 'A refreshing smoothie bowl topped with fruits and nuts.',
-    image: 'path/to/smoothie-bowl-image.jpg', // Replace with the actual image path
-  },
-  {
-    title: 'Avocado Toast',
-    description: 'Toasted bread topped with mashed avocado and spices.',
-    image: 'path/to/avocado-toast-image.jpg', // Replace with the actual image path
-  },
-];
+import { useNavigate } from 'react-router-dom';
+import pancakesImage from '../assets/pancakes.jpg'; // Replace with the actual image path
+import omeletteImage from '../assets/omelette.jpg'; // Replace with the actual image path
+import smoothieBowlImage from '../assets/smoothie-bowl.jpg'; // Replace with the actual image path
+import avocadoToastImage from '../assets/avocado-toast.jpg'; // Replace with the actual image path
+import './Breakfast.css'; // Import the CSS file for styling
 
 const Breakfast = () => {
+  const navigate = useNavigate();
+
+  const handleViewAllClick = () => {
+    navigate('/recipes');
+  };
+
+  const breakfastRecipes = [
+    {
+      title: 'Pancakes',
+      description: 'Fluffy pancakes served with maple syrup.',
+      image: pancakesImage,
+    },
+    {
+      title: 'Omelette',
+      description: 'A classic omelette filled with cheese and vegetables.',
+      image: omeletteImage,
+    },
+    {
+      title: 'Smoothie Bowl',
+      description: 'A refreshing smoothie bowl topped with fruits and nuts.',
+      image: smoothieBowlImage,
+    },
+    {
+      title: 'Avocado Toast',
+      description: 'Toasted bread topped with mashed avocado and spices.',
+      image: avocadoToastImage,
+    },
+  ];
+
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>Breakfast Recipes</h1>
-      <div style={styles.recipeList}>
+    <div className="breakfast-container">
+      <h1 className="breakfast-title">Breakfast Recipes</h1>
+      <div className="breakfast-recipeList">
         {breakfastRecipes.map((recipe, index) => (
-          <div key={index} style={styles.recipeCard}>
-            <img src={recipe.image} alt={recipe.title} style={styles.image} />
-            <h2 style={styles.recipeTitle}>{recipe.title}</h2>
-            <p style={styles.description}>{recipe.description}</p>
+          <div key={index} className="breakfast-recipeCard">
+            <img src={recipe.image} alt={recipe.title} className="breakfast-image" />
+            <h2 className="breakfast-recipeTitle">{recipe.title}</h2>
+            <p className="breakfast-description">{recipe.description}</p>
           </div>
         ))}
       </div>
+      <div className="breakfast-button-container">
+        <button className="breakfast-button" onClick={handleViewAllClick}>View All Recipes</button>
+      </div>
     </div>
   );
-};
-
-// Simple styles for the component
-const styles = {
-  container: {
-    padding: '20px',
-    backgroundColor: '#f0f8ff',
-  },
-  title: {
-    textAlign: 'center',
-    fontSize: '2.5rem',
-    marginBottom: '20px',
-  },
-  recipeList: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-  },
-  recipeCard: {
-    backgroundColor: '#fff',
-    borderRadius: '10px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    margin: '10px',
-    padding: '25px', // Increased padding for a larger card
-    width: '350px', // Increased width of the card
-    textAlign: 'center',
-  },
-  image: {
-    width: '100%',
-    borderRadius: '10px',
-    height: 'auto',
-  },
-  recipeTitle: {
-    fontSize: '1.75rem', // Increased font size for the title
-    margin: '10px 0',
-  },
-  description: {
-    fontSize: '1.2rem', // Increased font size for the description
-    color: '#555',
-  },
 };
 
 export default Breakfast;

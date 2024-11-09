@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import { signup } from '../services/authServices';
 import { useNavigate } from 'react-router-dom';
-import signupBackground from '../assets/signup-background.jpg'; // Updated to the new image name
+import signupBackground from '../assets/signup-background.jpg';
+import './Signup.css'; // Import the CSS file for styling
 
 const Signup = () => {
   const [name, setName] = useState('');
@@ -15,7 +16,7 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const handleSignup = async () => {
-    setError(''); // Reset error
+    setError('');
     if (!termsAccepted) {
       setError('You must accept the terms and conditions.');
       return;
@@ -26,126 +27,65 @@ const Signup = () => {
       return;
     }
 
-    setLoading(true); // Start loading state
+    setLoading(true);
     try {
       await signup(email, password);
       navigate('/');
     } catch (error) {
       setError(error.message);
     } finally {
-      setLoading(false); // End loading state
+      setLoading(false);
     }
   };
 
   return (
-    <div style={styles.container}>
-      <div style={styles.overlay}>
-        <h2 style={styles.title}>Sign Up</h2>
-        {error && <p style={styles.error}>{error}</p>} {/* Display error message */}
+    <div className="signup-container" style={{ backgroundImage: `url(${signupBackground})` }}>
+      <div className="signup-overlay">
+        <h2 className="signup-title">Sign Up</h2>
+        {error && <p className="signup-error">{error}</p>}
         <input 
           type="text" 
           placeholder="Name" 
           value={name} 
           onChange={(e) => setName(e.target.value)} 
-          style={styles.input} 
+          className="signup-input" 
         />
         <input 
           type="email" 
           placeholder="Email" 
           value={email} 
           onChange={(e) => setEmail(e.target.value)} 
-          style={styles.input} 
+          className="signup-input" 
         />
         <input 
           type="password" 
           placeholder="Password" 
           value={password} 
           onChange={(e) => setPassword(e.target.value)} 
-          style={styles.input} 
+          className="signup-input" 
         />
         <input 
           type="password" 
           placeholder="Confirm Password" 
           value={confirmPassword} 
           onChange={(e) => setConfirmPassword(e.target.value)} 
-          style={styles.input} 
+          className="signup-input" 
         />
-        <label style={styles.checkboxLabel}>
+        <label className="signup-checkboxLabel">
           <input 
             type="checkbox" 
             checked={termsAccepted} 
             onChange={(e) => setTermsAccepted(e.target.checked)} 
-            style={styles.checkbox} 
+            className="signup-checkbox" 
           />
           I accept the terms and conditions
         </label>
-        <button onClick={handleSignup} style={styles.button} disabled={loading}>
+        <button onClick={handleSignup} className="signup-button" disabled={loading}>
           {loading ? 'Signing Up...' : 'Sign Up'}
         </button>
       </div>
     </div>
   );
-};
-
-// Simple styles for the component
-const styles = {
-  container: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    minHeight: '100vh',
-    backgroundImage: `url(${signupBackground})`, // Set background image
-    backgroundSize: 'cover', // Cover the entire viewport
-    backgroundPosition: 'center', // Center the image
-  },
-  overlay: {
-    backgroundColor: 'rgba(255, 255, 255, 0.8)', // White background with opacity
-    padding: '40px',
-    borderRadius: '10px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)', // Shadow for depth
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center', // Center the items
-    width: '100%', // Full width of the overlay
-    maxWidth: '400px', // Limit maximum width
-  },
-  title: {
-    fontSize: '2rem',
-    marginBottom: '20px',
-    color: '#333',
-  },
-  error: {
-    color: 'red',
-    marginBottom: '15px',
-  },
-  input: {
-    width: '100%',
-    padding: '10px',
-    marginBottom: '15px',
-    border: '1px solid #ccc',
-    borderRadius: '5px',
-    fontSize: '1rem',
-  },
-  checkboxLabel: {
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom: '15px',
-    fontSize: '0.9rem',
-    color: '#333',
-  },
-  checkbox: {
-    marginRight: '10px',
-  },
-  button: {
-    padding: '10px 20px',
-    fontSize: '1rem',
-    color: '#fff',
-    backgroundColor: '#007bff',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    transition: 'background-color 0.3s',
-  },
 };
 
 export default Signup;

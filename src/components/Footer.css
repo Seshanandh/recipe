@@ -1,32 +1,97 @@
 /* src/components/Footer.css */
 .footer {
-    background-color: #ff7f50; /* Dark orange */
-    color: #fff;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    padding: 40px 0;
     text-align: center;
-    padding: 2rem 0; /* Increased padding for height */
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    font-size: 1.2rem; /* Increased font size for better visibility */
-}
-
-.social-media {
-    margin-top: 1rem; /* Increased margin for spacing */
-}
-
-.social-media a {
+  }
+  
+  .footer-top {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    flex-wrap: wrap;
+  }
+  
+  .footer-logo {
+    text-align: left;
+  }
+  
+  .footer-logo h2 {
+    margin: 0;
+    font-size: 1.5rem;
     color: #fff;
+  }
+  
+  .footer-logo p {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+  }
+  
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .footer-column h3 {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  .footer-column a {
+    display: block;
+    color: #a0a0a0;
+    font-size: 0.9rem;
     text-decoration: none;
-    margin: 0 15px; /* Increased margin for spacing */
-    transition: color 0.3s;
-    font-size: 1.2rem; /* Increased font size for social media links */
-}
-
-.social-media a:hover {
-    color: #ffcc00; /* Light yellow on hover */
-}
+    margin: 5px 0;
+  }
+  
+  .footer-column a:hover {
+    color: #e0e0e0;
+  }
+  
+  .footer-divider {
+    border: 0.5px solid #333;
+    width: 90%;
+    margin: 20px auto;
+  }
+  
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    color: #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  
+  .icon:hover {
+    background-color: #e0e0e0;
+    color: #1a1a1a;
+  }
+  
+  .footer-bottom p {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+  }
+  

@@ -1,43 +1,68 @@
-.container {
-    padding: 20px;
-    background-color: #f0f8ff;
-  }
-  
-  .title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .recipeList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .recipeCard {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    padding: 25px; /* Increased padding for a larger card */
-    width: 350px; /* Increased width of the card */
-    text-align: center;
-  }
-  
-  .image {
-    width: 100%;
-    border-radius: 10px;
-    height: auto;
-  }
-  
-  .recipeTitle {
-    font-size: 1.75rem; /* Increased font size for the title */
-    margin: 10px 0;
-  }
-  
-  .description {
-    font-size: 1.2rem; /* Increased font size for the description */
-    color: #555;
-  }
-  
+/* src/pages/EveningSnacks.css */
+.evening-snacks-container {
+  padding: 20px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.evening-snacks-banner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.evening-snacks-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.evening-snacks-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.evening-snacks-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+}
+
+.evening-snacks-image {
+  width: 100%;
+  border-radius: 10px;
+  height: auto;
+}
+
+.evening-snacks-recipe-title {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.evening-snacks-description {
+  font-size: 1rem;
+  color: #555;
+}
+
+.evening-snacks-button-container {
+  margin-top: 30px;
+}
+
+.evening-snacks-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.evening-snacks-button:hover {
+  background-color: #0056b3;
+}
